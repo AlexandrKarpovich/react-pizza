@@ -15,11 +15,15 @@ import classnames from 'classnames'
 //     }
 // }
 
-function Button (props) {
+function Button ({onClick, className, outline, children}) {
     return (
-        <button className={classnames('button', {
-                'button--outline': props.outline,
-            })}>{props.children}</button>
+        <button
+            onClick={onClick}
+            className={classnames('button', className, {
+                'button--outline': outline,
+            })}>
+            {children}
+        </button>
     )
 }
 
